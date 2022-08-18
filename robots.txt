@@ -1,1 +1,1 @@
-Sitemap: https://safinsingh.github.io/fastpages-apcsp/sitemap.xml
+Sitemap: https://fastpages.safin.dev/sitemap.xml
