@@ -2,6 +2,17 @@
   
     
         "post0": {
+            "title": "My interests",
+            "content": "I enjoy playing tennis and my favorite class at this school is APCSP! I love to code and I can’t wait to take this class! . “Knowledge is power.” – Francis Bacon . if (brain != empty) { keepCoding(); } else { orderCoffee(); } . I love to code code code! .",
+            "url": "https://fastpages.safin.dev/markdown/2022/08/22/my-interests.html",
+            "relUrl": "/markdown/2022/08/22/my-interests.html",
+            "date": " • Aug 22, 2022"
+        }
+        
+    
+  
+    
+        ,"post1": {
             "title": "Basic Python Jupyter notebook",
             "content": "Python . Just a basic hello with Python . print(&quot;Hello&quot;) . Hello .",
             "url": "https://fastpages.safin.dev/jupyter/2022/08/18/python-hello.html",
@@ -12,7 +23,7 @@
     
   
     
-        ,"post1": {
+        ,"post2": {
             "title": "Week 0 Post",
             "content": "Example Markdown Post . Markdown is pretty cool. Here are some examples of what it can do! . My favorite foods . Pizza | Pasta | Ramen | . My favorite colors (in order) . White | Green | Red | Here is some additional formatting and an image: . . This is the VSCode logo (and this is a blockquote) .",
             "url": "https://fastpages.safin.dev/markdown/2022/08/17/week-0-post.html",
