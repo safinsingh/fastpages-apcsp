@@ -99,7 +99,7 @@ layout: notebook
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Here's a screenshot of my quiz running as a separate Python file in my terminal to "show workflow of Input and Output in terminal":
-<img src="//images/copied_from_nb/quiz/python-quiz.png" alt="quiz"></p>
+<img src="https://github.com/safinsingh/fastpages-apcsp/blob/master/_notebooks/quiz/python-quiz.png?raw=true" alt="quiz"></p>
 
 </div>
 </div>
