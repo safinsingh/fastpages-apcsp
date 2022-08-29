@@ -1,7 +1,7 @@
 ---
 toc: false
 layout: post
-categories: [markdown]
+categories: [markdown, csp]
 title: My interests
 ---
 
