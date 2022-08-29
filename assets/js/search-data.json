@@ -2,6 +2,17 @@
   
     
         "post0": {
+            "title": "Python Quiz",
+            "content": "You can use the following quiz to test your Python knowledge! . def ask(qna): # destructure qna tuple question, answer = qna # get user input res = input(question + &quot; &quot;) # make comparison case-insensitive (given our answers are lowercase) if res.lower() == answer: # use string interpolation to print a correct anser print(&quot;&#39;{}&#39; is the correct answer!&quot;.format(res)) return True else: # prompt the user to try again if they want to again = input(&quot;&#39;{}&#39; is incorrect. Try again? [y/N] &quot;.format(res)) if again == &quot;y&quot;: # recursively call &quot;ask&quot; function for the retry feature return ask(qna) else: return False questions_and_answers = [ # Pre-written questions (&quot;What command is used to include other functions that were previously developed?&quot;, &quot;import&quot;), (&quot;What command is used to evaluate correct or incorrect response in this example?&quot;, &quot;if&quot;), (&quot;Each &#39;if&#39; command contains an &#39;_________&#39; to determine a true or false condition?&quot;, &quot;expression&quot;), # My own questions (&quot;The two possible boolean values in Python are true and &#39;____&#39;.&quot;, &quot;false&quot;), (&quot;Python is a(n) [interpreted/compiled] language.&quot;, &quot;interpreted&quot;), (&quot;A &#39;___&#39; loop can iterate over items in a list.&quot;, &quot;for&quot;), (&quot;What keyword can be used to create a block that can catch and handle an exception?&quot;, &quot;try&quot;), # Questions for the document (&quot;A function &#39;________&#39; allows the programmer to specify additional info to a function.&quot;, &quot;parameter&quot;), (&quot;The &#39;def&#39; keyword is used when defining a &#39;________&#39;.&quot;, &quot;function&quot;), (&quot;The &#39;_&#39; operator can be used to concatenate two strings.&quot;, &quot;+&quot;) ] ### MAIN ### print(&quot;Welcome to the Python quiz!&quot;) # counter for the total correct answers correct = 0 # loop over all items in the questions_and_answers list for qna in questions_and_answers: if ask(qna): # increment the counter if the user gets something correct correct += 1 # display the total score at the end with an encouraging message print(&quot;Great job! You got a score of {}%.&quot;.format( int(100 * correct / len(questions_and_answers)))) . Here&#39;s a screenshot of my quiz running as a separate Python file in my terminal to &quot;show workflow of Input and Output in terminal&quot;: .",
+            "url": "https://fastpages.safin.dev/jupyter/2022/08/26/python-quiz.html",
+            "relUrl": "/jupyter/2022/08/26/python-quiz.html",
+            "date": " • Aug 26, 2022"
+        }
+        
+    
+  
+    
+        ,"post1": {
             "title": "My interests",
             "content": "I enjoy playing tennis and my favorite class at this school is APCSP! I love to code and I can’t wait to take this class! . “Knowledge is power.” – Francis Bacon . if (brain != empty) { keepCoding(); } else { orderCoffee(); } . I love to code code code! .",
             "url": "https://fastpages.safin.dev/markdown/2022/08/22/my-interests.html",
@@ -12,7 +23,7 @@
     
   
     
-        ,"post1": {
+        ,"post2": {
             "title": "Basic Python Jupyter notebook",
             "content": "Python . Just a basic hello with Python . print(&quot;Hello&quot;) . Hello .",
             "url": "https://fastpages.safin.dev/jupyter/2022/08/18/python-hello.html",
@@ -23,7 +34,7 @@
     
   
     
-        ,"post2": {
+        ,"post3": {
             "title": "Week 0 Post",
             "content": "Example Markdown Post . Markdown is pretty cool. Here are some examples of what it can do! . My favorite foods . Pizza | Pasta | Ramen | . My favorite colors (in order) . White | Green | Red | Here is some additional formatting and an image: . . This is the VSCode logo (and this is a blockquote) .",
             "url": "https://fastpages.safin.dev/markdown/2022/08/17/week-0-post.html",
