@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Lists, Dictionaries, Iteration | Safin’s Fastpages Site</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Lists, Dictionaries, Iteration" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="An introduction to Data Abstraction using Python Lists [] and Python Dictionaries {}." />
+<meta property="og:description" content="An introduction to Data Abstraction using Python Lists [] and Python Dictionaries {}." />
+<link rel="canonical" href="https://fastpages.safin.dev/collegeboard/python_lists" />
+<meta property="og:url" content="https://fastpages.safin.dev/collegeboard/python_lists" />
+<meta property="og:site_name" content="Safin’s Fastpages Site" />
+<meta property="og:image" content="https://fastpages.safin.dev/images/python_lists.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-08-30T00:00:00-05:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://fastpages.safin.dev/images/python_lists.png" />
+<meta property="twitter:title" content="Lists, Dictionaries, Iteration" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-08-30T00:00:00-05:00","datePublished":"2022-08-30T00:00:00-05:00","description":"An introduction to Data Abstraction using Python Lists [] and Python Dictionaries {}.","headline":"Lists, Dictionaries, Iteration","image":"https://fastpages.safin.dev/images/python_lists.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://fastpages.safin.dev/collegeboard/python_lists"},"url":"https://fastpages.safin.dev/collegeboard/python_lists"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://fastpages.safin.dev/feed.xml" title="Safin's Fastpages Site" /><link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Safin&#39;s Fastpages Site</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About Me</a><a class="page-link" href="/search/">Search</a><a class="page-link" href="/categories/">Tags</a><a class="page-link" href="/vocab/">Vocab</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Lists, Dictionaries, Iteration</h1><p class="page-description">An introduction to Data Abstraction using Python Lists [] and Python Dictionaries {}.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-08-30T00:00:00-05:00" itemprop="datePublished">
+        Aug 30, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      2 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="//categories/#collegeboard">collegeboard</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/safinsingh/fastpages-apcsp/tree/master/_notebooks/2022-08-30-python-lists.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/safinsingh/fastpages-apcsp/master?filepath=_notebooks%2F2022-08-30-python-lists.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/safinsingh/fastpages-apcsp/blob/master/_notebooks/2022-08-30-python-lists.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fsafinsingh%2Ffastpages-apcsp%2Fblob%2Fmaster%2F_notebooks%2F2022-08-30-python-lists.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h1"><a href="#Defining-InfoDB">Defining InfoDB </a></li>
+<li class="toc-entry toc-h1"><a href="#Adding-entries-to-InfoDB">Adding entries to InfoDB </a></li>
+<li class="toc-entry toc-h1"><a href="#Printing-InfoDB">Printing InfoDB </a></li>
+<li class="toc-entry toc-h1"><a href="#For-loop-with-index">For loop with index </a></li>
+<li class="toc-entry toc-h1"><a href="#While-loop">While loop </a></li>
+<li class="toc-entry toc-h1"><a href="#Recursion">Recursion </a></li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2022-08-30-python-lists.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Defining-InfoDB">
+<a class="anchor" href="#Defining-InfoDB" aria-hidden="true"><span class="octicon octicon-link"></span></a>Defining InfoDB<a class="anchor-link" href="#Defining-InfoDB"> </a>
+</h1>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">InfoDb</span> <span class="o">=</span> <span class="p">[]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Adding-entries-to-InfoDB">
+<a class="anchor" href="#Adding-entries-to-InfoDB" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adding entries to InfoDB<a class="anchor-link" href="#Adding-entries-to-InfoDB"> </a>
+</h1>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">InfoDb</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Safin Singh"</span><span class="p">,</span>
+    <span class="s2">"age"</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+    <span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"8588318732"</span><span class="p">,</span>
+    <span class="s2">"interests"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"tennis"</span><span class="p">,</span> <span class="s2">"programming"</span><span class="p">],</span>
+    <span class="s2">"grades"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"APCSP"</span><span class="p">:</span> <span class="s2">"A"</span><span class="p">,</span>
+        <span class="s2">"APEL"</span><span class="p">:</span> <span class="s2">"A"</span><span class="p">,</span>
+        <span class="s2">"AP Physics"</span><span class="p">:</span> <span class="s2">"A"</span><span class="p">,</span>
+        <span class="s2">"AP Stats"</span><span class="p">:</span> <span class="s2">"A"</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+
+<span class="n">InfoDb</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Alex Kumar"</span><span class="p">,</span>
+    <span class="s2">"age"</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+    <span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"8587576371"</span><span class="p">,</span>
+    <span class="s2">"interests"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"tennis"</span><span class="p">,</span> <span class="s2">"basketball"</span><span class="p">],</span>
+    <span class="s2">"grades"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"APCSP"</span><span class="p">:</span> <span class="s2">"A"</span><span class="p">,</span>
+        <span class="s2">"APEL"</span><span class="p">:</span> <span class="s2">"A"</span><span class="p">,</span>
+        <span class="s2">"AP Physics"</span><span class="p">:</span> <span class="s2">"A"</span><span class="p">,</span>
+        <span class="s2">"AP Calculus BC"</span><span class="p">:</span> <span class="s2">"A"</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+
+<span class="n">InfoDb</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Kalani Cabral-Omana"</span><span class="p">,</span>
+    <span class="s2">"age"</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+    <span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"6196953229"</span><span class="p">,</span>
+    <span class="s2">"interests"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"soccer"</span><span class="p">,</span> <span class="s2">"surfing"</span><span class="p">],</span>
+    <span class="s2">"grades"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"APCSP"</span><span class="p">:</span> <span class="s2">"A"</span><span class="p">,</span>
+        <span class="s2">"APEL"</span><span class="p">:</span> <span class="s2">"B"</span><span class="p">,</span>
+        <span class="s2">"AP Physics"</span><span class="p">:</span> <span class="s2">"B"</span><span class="p">,</span>
+        <span class="s2">"AP Stats"</span><span class="p">:</span> <span class="s2">"A"</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+
+<span class="n">InfoDb</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Navan Yatavelli"</span><span class="p">,</span>
+    <span class="s2">"age"</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span>
+    <span class="s2">"phone"</span><span class="p">:</span> <span class="s2">"8584329656"</span><span class="p">,</span>
+    <span class="s2">"interests"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"football"</span><span class="p">,</span> <span class="s2">"walking my dog"</span><span class="p">],</span>
+    <span class="s2">"grades"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"APCSP"</span><span class="p">:</span> <span class="s2">"A"</span><span class="p">,</span>
+        <span class="s2">"American Lit"</span><span class="p">:</span> <span class="s2">"A"</span><span class="p">,</span>
+        <span class="s2">"AP Stats"</span><span class="p">:</span> <span class="s2">"A"</span><span class="p">,</span>
+        <span class="s2">"AP Bio"</span><span class="p">:</span> <span class="s2">"A"</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Printing-InfoDB">
+<a class="anchor" href="#Printing-InfoDB" aria-hidden="true"><span class="octicon octicon-link"></span></a>Printing InfoDB<a class="anchor-link" href="#Printing-InfoDB"> </a>
+</h1>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">format_entry</span><span class="p">(</span><span class="n">entry</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"""</span><span class="si">{}</span><span class="s2"></span>
+<span class="s2">    Age: </span><span class="si">{}</span><span class="s2"></span>
+<span class="s2">    Phone: </span><span class="si">{}</span><span class="s2"></span>
+<span class="s2">    Interests: </span><span class="si">{}</span><span class="s2"></span>
+<span class="s2">    Grades:"""</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">entry</span><span class="p">[</span><span class="s2">"name"</span><span class="p">],</span> <span class="n">entry</span><span class="p">[</span><span class="s2">"age"</span><span class="p">],</span> <span class="n">entry</span><span class="p">[</span><span class="s2">"phone"</span><span class="p">],</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">entry</span><span class="p">[</span><span class="s2">"interests"</span><span class="p">])))</span>
+    <span class="k">for</span> <span class="n">cl</span><span class="p">,</span> <span class="n">grade</span> <span class="ow">in</span> <span class="n">entry</span><span class="p">[</span><span class="s2">"grades"</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"        </span><span class="si">{}</span><span class="s2">: </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cl</span><span class="p">,</span> <span class="n">grade</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">()</span>
+
+<span class="c1"># loop through each entry in InfoDb by value</span>
+<span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">InfoDb</span><span class="p">:</span>
+    <span class="n">format_entry</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Safin Singh
+    Age: 16
+    Phone: 8588318732
+    Interests: tennis, programming
+    Grades:
+        APCSP: A
+        APEL: A
+        AP Physics: A
+        AP Stats: A
+
+Alex Kumar
+    Age: 16
+    Phone: 8587576371
+    Interests: tennis, basketball
+    Grades:
+        APCSP: A
+        APEL: A
+        AP Physics: A
+        AP Calculus BC: A
+
+Kalani Cabral-Omana
+    Age: 16
+    Phone: 6196953229
+    Interests: soccer, surfing
+    Grades:
+        APCSP: A
+        APEL: B
+        AP Physics: B
+        AP Stats: A
+
+Navan Yatavelli
+    Age: 15
+    Phone: 8584329656
+    Interests: football, walking my dog
+    Grades:
+        APCSP: A
+        American Lit.: A
+        AP Stats: A
+        AP Bio: A
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="For-loop-with-index">
+<a class="anchor" href="#For-loop-with-index" aria-hidden="true"><span class="octicon octicon-link"></span></a>For loop with index<a class="anchor-link" href="#For-loop-with-index"> </a>
+</h1>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">InfoDb</span><span class="p">)):</span>
+    <span class="n">format_entry</span><span class="p">(</span><span class="n">InfoDb</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Safin Singh
+    Age: 16
+    Phone: 8588318732
+    Interests: tennis, programming
+    Grades:
+        APCSP: A
+        APEL: A
+        AP Physics: A
+        AP Stats: A
+
+Alex Kumar
+    Age: 16
+    Phone: 8587576371
+    Interests: tennis, basketball
+    Grades:
+        APCSP: A
+        APEL: A
+        AP Physics: A
+        AP Calculus BC: A
+
+Kalani Cabral-Omana
+    Age: 16
+    Phone: 6196953229
+    Interests: soccer, surfing
+    Grades:
+        APCSP: A
+        APEL: B
+        AP Physics: B
+        AP Stats: A
+
+Navan Yatavelli
+    Age: 15
+    Phone: 8584329656
+    Interests: football, walking my dog
+    Grades:
+        APCSP: A
+        American Lit.: A
+        AP Stats: A
+        AP Bio: A
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="While-loop">
+<a class="anchor" href="#While-loop" aria-hidden="true"><span class="octicon octicon-link"></span></a>While loop<a class="anchor-link" href="#While-loop"> </a>
+</h1>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c1"># cap the loop at len(InfoDb) runs</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">InfoDb</span><span class="p">)</span>
+
+<span class="c1"># while the counter is less than list length...</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+    <span class="n">format_entry</span><span class="p">(</span><span class="n">InfoDb</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="c1"># increment counter</span>
+    <span class="n">i</span><span class="o">+=</span><span class="mi">1</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Recursion">
+<a class="anchor" href="#Recursion" aria-hidden="true"><span class="octicon octicon-link"></span></a>Recursion<a class="anchor-link" href="#Recursion"> </a>
+</h1>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">InfoDb</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">printer</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+    <span class="c1"># if you are at the end of the list, quit</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">n</span><span class="p">:</span>
+        <span class="k">return</span>
+
+    <span class="n">format_entry</span><span class="p">(</span><span class="n">InfoDb</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+    <span class="c1"># call function with the next index</span>
+    <span class="n">printer</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">printer</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Safin Singh
+    Age: 16
+    Phone: 8588318732
+    Interests: tennis, programming
+    Grades:
+        APCSP: A
+        APEL: A
+        AP Physics: A
+        AP Stats: A
+
+Alex Kumar
+    Age: 16
+    Phone: 8587576371
+    Interests: tennis, basketball
+    Grades:
+        APCSP: A
+        APEL: A
+        AP Physics: A
+        AP Calculus BC: A
+
+Kalani Cabral-Omana
+    Age: 16
+    Phone: 6196953229
+    Interests: soccer, surfing
+    Grades:
+        APCSP: A
+        APEL: B
+        AP Physics: B
+        AP Stats: A
+
+Navan Yatavelli
+    Age: 15
+    Phone: 8584329656
+    Interests: football, walking my dog
+    Grades:
+        APCSP: A
+        American Lit.: A
+        AP Stats: A
+        AP Bio: A
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><a class="u-url" href="/collegeboard/python_lists" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Hi! This is my fastpages site built for APCSP.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/safinsingh" target="_blank" title="safinsingh"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
