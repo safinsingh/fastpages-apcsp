@@ -427,17 +427,17 @@ pre code { font-size: 15px !important; }
 
 * { transition: all 0.3s; }
 
-html, body, input, textarea, select, button { color: #FFFFE3 !important; background-color: #10100E !important; }
+html, body, input, textarea, select, button { color: #ffffe3 !important; background-color: #10100e !important; }
 
 a { color: #92928c !important; }
 
-a:hover { color: #FFFFE3 !important; text-decoration: none !important; }
+a:hover { color: #ffffe3 !important; text-decoration: none !important; }
 
-.site-title, .site-title:visited, .site-nav, .page-link { color: #FFFFE3 !important; }
+.site-title, .site-title:visited, .site-nav, .page-link { color: #ffffe3 !important; }
 
-.site-nav { background-color: #10100E; border-color: #313130; }
+.site-nav { background-color: #10100e; border-color: #313130; }
 
-* { scrollbar-color: #10100E #313130; }
+* { scrollbar-color: #10100e #313130; }
 
 pre, code { border-color: #313130; background-color: #1c1c1a; }
 
@@ -447,20 +447,22 @@ pre, code { border-color: #313130; background-color: #1c1c1a; }
 
 .post-content p, .post-content li { color: rgba(255, 255, 255, 0.69); }
 
-.btn { background-color: #1c1c1a !important; color: #FFFFE3 !important; border-color: #313130 !important; }
+.btn { background-color: #1c1c1a !important; color: #ffffe3 !important; border-color: #313130 !important; }
 
-.btn:hover { background-color: #10100E !important; }
+.btn:hover { background-color: #10100e !important; }
 
-table th { background-color: #1c1c1a; border-color: #313130; color: #FFFFE3; }
+table th { background-color: #1c1c1a; border-color: #313130; color: #ffffe3; }
 
-table td { background-color: #10100E; border-color: #313130; color: rgba(255, 255, 255, 0.69); }
+table td { background-color: #10100e; border-color: #313130; color: rgba(255, 255, 255, 0.69); }
 
-.flash { color: #10100E !important; filter: brightness(80%); }
+.flash { color: #10100e !important; filter: brightness(80%); }
 
 canvas { filter: invert(100%); }
 
 .post-list > li > div { box-shadow: none !important; background-color: #1c1c1a; border: none !important; }
 
 li .post-meta-description { color: rgba(255, 255, 255, 0.69) !important; }
+
+.site-header { position: sticky; top: 0; background-color: #10100e !important; }
 
 /*# sourceMappingURL=style.css.map */
