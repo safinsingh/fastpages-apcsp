@@ -57,10 +57,13 @@ layout: notebook
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">InfoDb</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+    <span class="c1"># key-value pairs</span>
     <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Safin Singh&quot;</span><span class="p">,</span>
     <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
     <span class="s2">&quot;phone&quot;</span><span class="p">:</span> <span class="s2">&quot;858-XXX-XXXX&quot;</span><span class="p">,</span>
+    <span class="c1"># interests is a list of strs</span>
     <span class="s2">&quot;interests&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;tennis&quot;</span><span class="p">,</span> <span class="s2">&quot;programming&quot;</span><span class="p">],</span>
+    <span class="c1"># grades is a dict</span>
     <span class="s2">&quot;grades&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;APCSP&quot;</span><span class="p">:</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span>
         <span class="s2">&quot;APEL&quot;</span><span class="p">:</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span>
@@ -130,13 +133,15 @@ layout: notebook
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">format_entry</span><span class="p">(</span><span class="n">entry</span><span class="p">):</span>
+    <span class="c1"># use format string to print entries</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span><span class="si">{}</span><span class="s2"></span>
 <span class="s2">    Age: </span><span class="si">{}</span><span class="s2"></span>
 <span class="s2">    Phone: </span><span class="si">{}</span><span class="s2"></span>
 <span class="s2">    Interests: </span><span class="si">{}</span><span class="s2"></span>
 <span class="s2">    Grades:&quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">entry</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">],</span> <span class="n">entry</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">],</span> <span class="n">entry</span><span class="p">[</span><span class="s2">&quot;phone&quot;</span><span class="p">],</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">entry</span><span class="p">[</span><span class="s2">&quot;interests&quot;</span><span class="p">])))</span>
+    <span class="c1"># loop through classes to print each individual grade</span>
     <span class="k">for</span> <span class="n">cl</span><span class="p">,</span> <span class="n">grade</span> <span class="ow">in</span> <span class="n">entry</span><span class="p">[</span><span class="s2">&quot;grades&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;        </span><span class="si">{}</span><span class="s2">: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cl</span><span class="p">,</span> <span class="n">grade</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;        </span><span class="si">{}</span><span class="s2">: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">{</span><span class="n">cl</span><span class="p">,</span> <span class="n">grade</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">()</span>
 
 <span class="c1"># loop through each entry in InfoDb by value</span>
@@ -165,6 +170,7 @@ layout: notebook
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">InfoDb</span><span class="p">)):</span>
+    <span class="c1"># access the element at index i of InfoDb</span>
     <span class="n">format_entry</span><span class="p">(</span><span class="n">InfoDb</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 </pre></div>
 
@@ -194,6 +200,7 @@ layout: notebook
 
 <span class="c1"># while the counter is less than list length...</span>
 <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+    <span class="c1"># print entry at index i</span>
     <span class="n">format_entry</span><span class="p">(</span><span class="n">InfoDb</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
     <span class="c1"># increment counter</span>
     <span class="n">i</span><span class="o">+=</span><span class="mi">1</span>
@@ -221,17 +228,253 @@ layout: notebook
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">InfoDb</span><span class="p">)</span>
 
+<span class="c1"># define recursive function</span>
 <span class="k">def</span> <span class="nf">printer</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
     <span class="c1"># if you are at the end of the list, quit</span>
     <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">n</span><span class="p">:</span>
         <span class="k">return</span>
 
+    <span class="c1"># print entry at index i</span>
     <span class="n">format_entry</span><span class="p">(</span><span class="n">InfoDb</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 
     <span class="c1"># call function with the next index</span>
     <span class="n">printer</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
 
+<span class="c1"># call function starting at index 0</span>
 <span class="n">printer</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Adding-an-entry-to-InfoDB-with-user-input">Adding an entry to InfoDB with user input<a class="anchor-link" href="#Adding-an-entry-to-InfoDB-with-user-input"> </a></h1>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What&#39;s your name? &quot;</span><span class="p">)</span>
+<span class="n">age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;How old are you? &quot;</span><span class="p">))</span>
+<span class="n">phone</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What&#39;s your phone number? &quot;</span><span class="p">)</span>
+
+<span class="c1"># get interests as a comma-separated list and split on the comma</span>
+<span class="n">interests</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What are your interests (comma-separated)? &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+
+<span class="c1"># see above</span>
+<span class="n">classes</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What classes are you in (comma-separated)? &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+<span class="n">grades</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span>
+    <span class="s2">&quot;What are your grades in each of your respective classes (comma-separated)? &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+<span class="c1"># transform both arrays into an array of tuples and then to a dict</span>
+<span class="n">class_grades</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">classes</span><span class="p">,</span> <span class="n">grades</span><span class="p">))</span>
+
+<span class="n">InfoDb</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span>
+    <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="n">age</span><span class="p">,</span>
+    <span class="s2">&quot;phone&quot;</span><span class="p">:</span> <span class="n">phone</span><span class="p">,</span>
+    <span class="s2">&quot;interests&quot;</span><span class="p">:</span> <span class="n">interests</span><span class="p">,</span>
+    <span class="s2">&quot;grades&quot;</span><span class="p">:</span> <span class="n">class_grades</span>
+<span class="p">})</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="My-partner's-list">My partner's list<a class="anchor-link" href="#My-partner's-list"> </a></h1>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">InfoDb</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">InfoDb</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+    <span class="s2">&quot;FirstName&quot;</span><span class="p">:</span> <span class="s2">&quot;samit&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;LastName&quot;</span><span class="p">:</span> <span class="s2">&quot;poojary&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;DOB&quot;</span><span class="p">:</span> <span class="s2">&quot;September 15&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Residence&quot;</span><span class="p">:</span> <span class="s2">&quot;San Diego&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Email&quot;</span><span class="p">:</span> <span class="s2">&quot;samit.poojary@gmail.com&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Phone&quot;</span><span class="p">:</span> <span class="s2">&quot;iphone&quot;</span>
+<span class="p">})</span>
+
+<span class="c1">#adding extra records to InfoDb</span>
+
+<span class="n">InfoDb</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+    <span class="s2">&quot;FirstName&quot;</span><span class="p">:</span> <span class="s2">&quot;Safin&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;LastName&quot;</span><span class="p">:</span> <span class="s2">&quot;Singh&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;DOB&quot;</span><span class="p">:</span> <span class="s2">&quot;July 13&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Residence&quot;</span><span class="p">:</span> <span class="s2">&quot;San Diego&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Email&quot;</span><span class="p">:</span> <span class="s2">&quot;safin.singh@gmail.com&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Phone&quot;</span><span class="p">:</span> <span class="s2">&quot;android&quot;</span>
+<span class="p">})</span>
+<span class="c1"># adding extra records</span>
+<span class="n">InfoDb</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+    <span class="s2">&quot;FirstName&quot;</span><span class="p">:</span> <span class="s2">&quot;Alex&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;LastName&quot;</span><span class="p">:</span> <span class="s2">&quot;Kumar&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;DOB&quot;</span><span class="p">:</span> <span class="s2">&quot;May 9&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Residence&quot;</span><span class="p">:</span> <span class="s2">&quot;San Diego&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Email&quot;</span><span class="p">:</span> <span class="s2">&quot;alex.k.kumar@gmail.com&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Phone&quot;</span><span class="p">:</span> <span class="s2">&quot;iphone&quot;</span>
+<span class="p">})</span>
+<span class="c1"># Adding one extra item to InfoDb</span>
+<span class="n">InfoDb</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+    <span class="s2">&quot;FirstName&quot;</span><span class="p">:</span> <span class="s2">&quot;Maxie&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;LastName&quot;</span><span class="p">:</span> <span class="s2">&quot;Kumar&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;DOB&quot;</span><span class="p">:</span> <span class="s2">&quot;November 5&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Residence&quot;</span><span class="p">:</span> <span class="s2">&quot;San Diego&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Email&quot;</span><span class="p">:</span> <span class="s2">&quot;maxie.kumar@gmail.com&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Phone&quot;</span><span class="p">:</span> <span class="s2">&quot;no phone&quot;</span>
+<span class="p">})</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Modified-format_entry-for-Alex's-list">Modified <code>format_entry</code> for Alex's list<a class="anchor-link" href="#Modified-format_entry-for-Alex's-list"> </a></h1>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">format_entry</span><span class="p">(</span><span class="n">entry</span><span class="p">):</span>
+    <span class="c1"># use format string to print entries</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2"></span>
+<span class="s2">    Date of Birth: </span><span class="si">{}</span><span class="s2"></span>
+<span class="s2">    Residence: </span><span class="si">{}</span><span class="s2"></span>
+<span class="s2">    Email: </span><span class="si">{}</span><span class="s2"></span>
+<span class="s2">    Phone:&quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="n">entry</span><span class="p">[</span><span class="s2">&quot;FirstName&quot;</span><span class="p">],</span>
+        <span class="n">entry</span><span class="p">[</span><span class="s2">&quot;LastName&quot;</span><span class="p">],</span>
+        <span class="n">entry</span><span class="p">[</span><span class="s2">&quot;DOB&quot;</span><span class="p">],</span>
+        <span class="n">entry</span><span class="p">[</span><span class="s2">&quot;Residence&quot;</span><span class="p">],</span>
+        <span class="n">entry</span><span class="p">[</span><span class="s2">&quot;Email&quot;</span><span class="p">],</span>
+        <span class="n">entry</span><span class="p">[</span><span class="s2">&quot;Phone&quot;</span><span class="p">]</span>
+    <span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="A-quiz-using-&quot;a-list-of-dictionaries&quot;-(?)">A quiz using "a list of dictionaries" (?)<a class="anchor-link" href="#A-quiz-using-&quot;a-list-of-dictionaries&quot;-(?)"> </a></h1>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">ask</span><span class="p">(</span><span class="n">qna</span><span class="p">):</span>
+    <span class="c1"># get question and answer from qna dictionary</span>
+    <span class="n">question</span> <span class="o">=</span> <span class="n">qna</span><span class="o">.</span><span class="n">keys</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="c1"># get user input</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">question</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span><span class="p">)</span>
+
+    <span class="c1"># make comparison case-insensitive (given our answers are lowercase)</span>
+    <span class="k">if</span> <span class="n">res</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="n">qna</span><span class="p">[</span><span class="n">question</span><span class="p">]:</span>
+        <span class="c1"># use string interpolation to print a correct anser</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&#39;</span><span class="si">{}</span><span class="s2">&#39; is the correct answer!&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">res</span><span class="p">))</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># prompt the user to try again if they want to</span>
+        <span class="n">again</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;&#39;</span><span class="si">{}</span><span class="s2">&#39; is incorrect. Try again? [y/N] &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">res</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">again</span> <span class="o">==</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span>
+            <span class="c1"># recursively call &quot;ask&quot; function for the retry feature</span>
+            <span class="k">return</span> <span class="n">ask</span><span class="p">(</span><span class="n">qna</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
+<span class="n">questions_and_answer</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1"># questions taken from previous quiz</span>
+    <span class="p">{</span><span class="s2">&quot;What command is used to include other functions that were previously developed?&quot;</span><span class="p">:</span> <span class="s2">&quot;import&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;What command is used to evaluate correct or incorrect response in this example?&quot;</span><span class="p">:</span> <span class="s2">&quot;if&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;Each &#39;if&#39; command contains an &#39;_________&#39; to determine a true or false condition?&quot;</span><span class="p">:</span> <span class="s2">&quot;expression&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;The two possible boolean values in Python are true and &#39;____&#39;.&quot;</span><span class="p">:</span> <span class="s2">&quot;false&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;Python is a(n) [interpreted/compiled] language.&quot;</span><span class="p">:</span> <span class="s2">&quot;interpreted&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;A &#39;___&#39; loop can iterate over items in a list.&quot;</span><span class="p">:</span> <span class="s2">&quot;for&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;What keyword can be used to create a block that can catch and handle an exception?&quot;</span><span class="p">:</span> <span class="s2">&quot;try&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;A function &#39;________&#39; allows the programmer to specify additional info to a function.&quot;</span><span class="p">:</span> <span class="s2">&quot;parameter&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;The &#39;def&#39; keyword is used when defining a &#39;________&#39;.&quot;</span><span class="p">:</span> <span class="s2">&quot;function&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;The &#39;_&#39; operator can be used to concatenate two strings.&quot;</span><span class="p">:</span> <span class="s2">&quot;+&quot;</span> <span class="p">}</span>
+<span class="p">]</span>
+
+<span class="c1"># counter for the total correct answers</span>
+<span class="n">correct</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># loop over all items in the questions_and_answers list</span>
+<span class="k">for</span> <span class="n">qna</span> <span class="ow">in</span> <span class="n">questions_and_answer</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">ask</span><span class="p">(</span><span class="n">qna</span><span class="p">):</span>
+        <span class="c1"># increment the counter if the user gets something correct</span>
+        <span class="n">correct</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="c1"># display the total score at the end with an encouraging message</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Great job! You got a score of </span><span class="si">{}</span><span class="s2">%.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+    <span class="nb">int</span><span class="p">(</span><span class="mi">100</span> <span class="o">*</span> <span class="n">correct</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">questions_and_answer</span><span class="p">))))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Print-list-backwards">Print list backwards<a class="anchor-link" href="#Print-list-backwards"> </a></h1>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">InfoDb</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+    <span class="n">format_entry</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span>
 </pre></div>
 
     </div>

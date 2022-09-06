@@ -20,7 +20,7 @@ layout: notebook
         
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Fetch-commits-from-GitHub's-REST-API">Fetch commits from GitHub's REST API<a class="anchor-link" href="#Fetch-commits-from-GitHub's-REST-API"> </a></h1><p>The following generates a markdown table from the latest commits on the GitHub repository hosting this FastPages site.</p>
+<h1 id="Fetch-commits-from-GitHub's-REST-API">Fetch commits from GitHub's REST API<a class="anchor-link" href="#Fetch-commits-from-GitHub's-REST-API"> </a></h1><p>The following generates a markdown table from the latest commits on the GitHub repository hosting this FastPages site. We're generating the table the "lazy programmer way" - Mr. Mort, 2022.</p>
 
 </div>
 </div>

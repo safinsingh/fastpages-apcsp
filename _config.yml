@@ -24,6 +24,8 @@ show_image: false
 annotations: false
 show_tags: true
 
+google_analytics: UA-153511540-4
+
 exclude:
   - docker-compose.yml
   - action.yml

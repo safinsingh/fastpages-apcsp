@@ -1,27 +1,30 @@
 /*-----------------------------------*/
 /*--- IMPORT STYLES FOR FASTPAGES ---*/
-@import "minima/fastpages-styles";   
+@import "minima/fastpages-styles";
 
 * {
     transition: all 0.3s;
 }
 
-
-
 // If you want to turn off dark background for syntax highlighting, comment or delete the below line.
-// @import "minima/fastpages-dracula-highlight"; 
+// @import "minima/fastpages-dracula-highlight";
 
-$high-emph: #FFFFE3;
+$high-emph: #ffffe3;
 $med-emph: rgba(white, 0.69);
 $low-emph: rgba(white, 0.38);
-$dark-grey : #10100E; 
+$dark-grey: #10100e;
 // $dark-grey : #1F1B24;
 $overlay: mix($dark-grey, white, 95%);
 $overlay-light: mix($dark-grey, white, 86%);
 
-html, body, input, textarea, select, button {   
-  color: $high-emph !important;
-  background-color: $dark-grey !important;
+html,
+body,
+input,
+textarea,
+select,
+button {
+    color: $high-emph !important;
+    background-color: $dark-grey !important;
 }
 
 a {
@@ -29,11 +32,14 @@ a {
 }
 
 a:hover {
-    color:$high-emph !important;
+    color: $high-emph !important;
     text-decoration: none !important;
 }
 
-.site-title, .site-title:visited, .site-nav, .page-link {
+.site-title,
+.site-title:visited,
+.site-nav,
+.page-link {
     color: $high-emph !important;
 }
 
@@ -46,7 +52,8 @@ a:hover {
     scrollbar-color: $dark-grey $overlay-light;
 }
 
-pre, code {
+pre,
+code {
     // BVas a lighter colour to better highlight short code words
     border-color: $overlay-light;
     background-color: $overlay;
@@ -60,7 +67,8 @@ pre, code {
     color: $low-emph;
 }
 
-.post-content p, .post-content li {
+.post-content p,
+.post-content li {
     color: $med-emph;
 }
 
@@ -74,13 +82,13 @@ pre, code {
     background-color: $dark-grey !important;
 }
 
-table th{
+table th {
     background-color: $overlay;
     border-color: $overlay-light;
     color: $high-emph;
 }
 
-table td{
+table td {
     background-color: $dark-grey;
     border-color: $overlay-light;
     color: $med-emph;
@@ -103,4 +111,10 @@ canvas {
 
 li .post-meta-description {
     color: $med-emph !important;
+}
+
+.site-header {
+    position: sticky;
+    top: 0;
+    background-color: $dark-grey !important;
 }
