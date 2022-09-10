@@ -3,19 +3,19 @@
 @import "minima/fastpages-styles";
 
 * {
-    transition: all 0.3s;
+    transition: all 0.2s ease-in-out;
 }
 
 // If you want to turn off dark background for syntax highlighting, comment or delete the below line.
 // @import "minima/fastpages-dracula-highlight";
 
-$high-emph: #ffffe3;
-$med-emph: rgba(white, 0.69);
-$low-emph: rgba(white, 0.38);
-$dark-grey: #10100e;
+$high-emph: #000000;
+$med-emph: #000000;
+$low-emph: #000000;
+$dark-grey: #ffffff;
 // $dark-grey : #1F1B24;
-$overlay: mix($dark-grey, white, 95%);
-$overlay-light: mix($dark-grey, white, 86%);
+$overlay: #000000;
+$overlay-light: #424242;
 
 html,
 body,
@@ -26,16 +26,6 @@ button {
     color: $high-emph !important;
     background-color: $dark-grey !important;
 }
-
-a {
-    color: #92928c !important;
-}
-
-a:hover {
-    color: $high-emph !important;
-    text-decoration: none !important;
-}
-
 .site-title,
 .site-title:visited,
 .site-nav,
@@ -57,6 +47,7 @@ code {
     // BVas a lighter colour to better highlight short code words
     border-color: $overlay-light;
     background-color: $overlay;
+    color: #fff;
 }
 
 .page-description {
@@ -117,4 +108,38 @@ li .post-meta-description {
     position: sticky;
     top: 0;
     background-color: $dark-grey !important;
+}
+
+a {
+    color: #ff5e5e !important;
+}
+
+a:hover {
+    color: #ff5e5ed0 !important;
+    text-decoration: none !important;
+    font-weight: bold !important;
+}
+
+@import url("https://rsms.me/inter/inter.css");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap");
+* {
+    font-family: "Inter", sans-serif !important;
+}
+@supports (font-variation-settings: normal) {
+    * {
+        font-family: "Inter var", sans-serif !important;
+    }
+}
+
+code,
+pre * {
+    font-family: "IBM Plex Mono", monospace !important;
+}
+h1,
+h2 {
+    font-weight: bold !important;
+}
+
+.highlight {
+    background-color: #000000 !important;
 }

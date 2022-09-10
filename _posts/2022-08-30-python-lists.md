@@ -7,6 +7,7 @@ categories: [collegeboard]
 permalink: /collegeboard/python_lists
 image: /images/python_lists.png
 tags: [python]
+comments: true
 nb_path: _notebooks/2022-08-30-python-lists.ipynb
 layout: notebook
 ---
@@ -141,7 +142,7 @@ layout: notebook
 <span class="s2">    Grades:&quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">entry</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">],</span> <span class="n">entry</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">],</span> <span class="n">entry</span><span class="p">[</span><span class="s2">&quot;phone&quot;</span><span class="p">],</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">entry</span><span class="p">[</span><span class="s2">&quot;interests&quot;</span><span class="p">])))</span>
     <span class="c1"># loop through classes to print each individual grade</span>
     <span class="k">for</span> <span class="n">cl</span><span class="p">,</span> <span class="n">grade</span> <span class="ow">in</span> <span class="n">entry</span><span class="p">[</span><span class="s2">&quot;grades&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;        </span><span class="si">{}</span><span class="s2">: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">{</span><span class="n">cl</span><span class="p">,</span> <span class="n">grade</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;        </span><span class="si">{}</span><span class="s2">: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cl</span><span class="p">,</span> <span class="n">grade</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">()</span>
 
 <span class="c1"># loop through each entry in InfoDb by value</span>

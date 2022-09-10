@@ -11,8 +11,8 @@ description: Hi! This is my fastpages site built for APCSP.
 github_username: safinsingh
 github_repo: "fastpages-apcsp"
 
-url: "https://fastpages.safin.dev" 
-baseurl: "/"
+url: "https://safinsingh.github.io" 
+baseurl: "/fastpages-apcsp"
 
 minima:
   social_links:
