@@ -477,4 +477,6 @@ h1, h2 { font-weight: bold !important; }
 
 .highlight { background-color: #000000 !important; }
 
+html { scroll-behavior: smooth !important; }
+
 /*# sourceMappingURL=style.css.map */
