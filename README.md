@@ -6,7 +6,7 @@
 
 # Safin's Blog
 
-Created with `fastpages`. Access at [https://fastpages.safin.dev](https://fastpages.safin.dev).
+Created with `fastpages`. Access at [https://fastpages.safin.dev](https://safinsingh.github.io/fastpages-apcsp).
 
 ## Local Development
 

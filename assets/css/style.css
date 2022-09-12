@@ -1,4 +1,5 @@
 @import url("https://rsms.me/inter/inter.css");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap");
 .highlight .c { color: #998; font-style: italic; }
 
 .highlight .err { color: #a61717; background-color: #e3d2d2; }
@@ -436,7 +437,7 @@ html, body, input, textarea, select, button { color: #000000 !important; backgro
 
 * { scrollbar-color: #ffffff #424242; }
 
-pre, code { border-color: #424242; background-color: #000000; }
+pre, code { border-color: #424242; background-color: #000000; color: #fff; }
 
 .page-description { color: #000000; }
 
@@ -470,6 +471,10 @@ a:hover { color: #ff5e5ed0 !important; text-decoration: none !important; font-we
 
 @supports (font-variation-settings: normal) { * { font-family: "Inter var", sans-serif !important; } }
 
+code, pre * { font-family: "IBM Plex Mono", monospace !important; }
+
 h1, h2 { font-weight: bold !important; }
+
+.highlight { background-color: #000000 !important; }
 
 /*# sourceMappingURL=style.css.map */
