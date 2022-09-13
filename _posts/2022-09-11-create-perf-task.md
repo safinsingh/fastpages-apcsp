@@ -24,7 +24,7 @@ I want to create a website that leverage's Spotify's API to show your Spotify li
 
 ![design]({{ site.baseurl }}/images/i am coding.png)
 
-I've bootstrapped the application already using `SvelteKit` and `pnpm create`.
+I've bootstrapped the application already using `SvelteKit` and `pnpm create`. This is a work in progress!
 
 ## Things I need to learn
 
