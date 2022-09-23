@@ -40,7 +40,7 @@ fetch("https://api.github.com/graphql", {
     );
 
     p.forEach((proj) => {
-      const info = document.createTextNode(
+      const info = document.append(
         `<h2>${proj.name}</h2>
          <p>${proj.description} -- <a href="${proj.url}">Link</a></p>`
       );
