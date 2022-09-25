@@ -151,6 +151,7 @@ html {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 1rem;
+  margin-bottom: 1rem;
 
   h3 {
     display: inline-block;
@@ -170,6 +171,7 @@ html {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    cursor: pointer;
 
     &:hover {
       border: 1px solid #dfdfdf;

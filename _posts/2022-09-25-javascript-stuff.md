@@ -104,3 +104,18 @@ Here's the styling I added:
 }
 ]
 ```
+
+and the corresponding HTML:
+
+```html
+<h1>Hi, I'm Safin Welcome to my blog!</h1>
+
+<p>
+  Here's my <a href="https://safin.dev" target="_blank">actual website</a> and
+  <a href="https://www.linkedin.com/in/safinsingh/">LinkedIn page</a>. Go check out my posts below!
+</p>
+
+<h2>Top 4 GitHub Projects</h2>
+<div id="projects"></div>
+<a href="{{ site.baseurl }}/js-explanation">Source code →</a>
+```
