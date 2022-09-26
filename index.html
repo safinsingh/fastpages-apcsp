@@ -102,10 +102,16 @@ window.onload = wrap_img;
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <div class="home"><h1 id="hi-im-safin-welcome-to-my-blog-heres-my-actual-website-and-linkedin-page-go-check-out-my-posts-below">Hi, I’m Safin Welcome to my blog! Here’s my <a href="https://safin.dev">actual website</a> and <a href="https://www.linkedin.com/in/safinsingh/">LinkedIn page</a>. Go check out my posts below!</h1>
+        <div class="home"><h1>Hi, I'm Safin Welcome to my blog!</h1>
 
-<h1>Top 4 Projects</h1>
+<p>
+  Here's my <a href="https://safin.dev" target="_blank">actual website</a> and
+  <a href="https://www.linkedin.com/in/safinsingh/">LinkedIn page</a>. Go check out my posts below!
+</p>
+
+<h2>Top 4 GitHub Projects</h2>
 <div id="projects"></div>
+<p><a href="/fastpages-apcsp/js-explanation">Source code →</a></p>
 
 <script defer="">
   const query = `query {
@@ -145,22 +151,20 @@ window.onload = wrap_img;
   })
     .then((r) => r.json())
     .then((r) => {
-      const p = r.data.repositoryOwner.itemShowcase.items.edges.map(
-        (edge) => edge.node
-      );
+      const p = r.data.repositoryOwner.itemShowcase.items.edges.map((edge) => edge.node);
 
       p.forEach((proj) => {
-        const info = document.createElement();
+        const info = document.createElement("div");
         info.innerHTML = `
-                <h2>${proj.name}</h2>
-                <p>${proj.description} -- <a href="${proj.url}">Link</a></p>
+        <h3><a href="${proj.url}">${proj.name}</a></h3>
+                <p>${proj.description}</p>
             `;
         projectsBox.appendChild(info);
       });
     });
 </script>
 
-<h1 id="posts">Posts</h1>
+<h2>Posts</h2>
 
 
 
@@ -181,18 +185,23 @@ window.onload = wrap_img;
    <!-- Assemble final sorted posts array -->
   
   <ul class="post-list"><li><h3>
+    <a class="post-link" href="/fastpages-apcsp/js-explanation">
+    JavaScript and CSS customization
+    </a>
+</h3><p class="post-meta">Sep 25, 2022</p>
+</li><li><h3>
     <a class="post-link" href="/fastpages-apcsp/markdown/csp/ap/2022/09/23/talking-up-the-homies.html">
     Points
     </a>
 </h3><p class="post-meta">Sep 23, 2022</p>
 </li><li><h3>
-    <a class="post-link" href="/fastpages-apcsp/markdown/csp/codeorg/app/2022/09/11/code-org-blog.html">
-    Code.org Blog
+    <a class="post-link" href="/fastpages-apcsp/markdown/csp/ap/2022/09/11/create-perf-task.html">
+    Create Performance Task
     </a>
 </h3><p class="post-meta">Sep 11, 2022</p>
 </li><li><h3>
-    <a class="post-link" href="/fastpages-apcsp/markdown/csp/ap/2022/09/11/create-perf-task.html">
-    Create Performance Task
+    <a class="post-link" href="/fastpages-apcsp/markdown/csp/codeorg/app/2022/09/11/code-org-blog.html">
+    Code.org Blog
     </a>
 </h3><p class="post-meta">Sep 11, 2022</p>
 </li><li><h3>
