@@ -97,7 +97,7 @@ window.onload = wrap_img;
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/fastpages-apcsp/about/">About Me</a><a class="page-link" href="/fastpages-apcsp/search/">Search</a><a class="page-link" href="/fastpages-apcsp/categories/">Tags</a><a class="page-link" href="/fastpages-apcsp/vocab/">Vocab</a></div>
+        <div class="trigger"><a class="page-link" href="/fastpages-apcsp/about/">About Me</a><a class="page-link" href="/fastpages-apcsp/github/">GitHub</a><a class="page-link" href="/fastpages-apcsp/search/">Search</a><a class="page-link" href="/fastpages-apcsp/categories/">Tags</a><a class="page-link" href="/fastpages-apcsp/vocab/">Vocab</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -108,61 +108,6 @@ window.onload = wrap_img;
   Here's my <a href="https://safin.dev" target="_blank">actual website</a> and
   <a href="https://www.linkedin.com/in/safinsingh/">LinkedIn page</a>. Go check out my posts below!
 </p>
-
-<h2>Top 4 GitHub Projects</h2>
-<div id="projects"></div>
-<p><a href="/fastpages-apcsp/js-explanation">Source code →</a></p>
-
-<script defer="">
-  const query = `query {
-        repositoryOwner(login: "safinsingh") {
-            ... on ProfileOwner {
-                itemShowcase {
-                    items(first: 4) {
-                        edges {
-                            node {
-                                ... on Repository {
-                                    name
-                                    description
-                                    url
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }`;
-  // pls dont abuse this token it only has a public repo scope and it has a rate limit
-  const token = decodeURIComponent(
-    atob("Z2hwX3V1YmN4UzNJZ3kwc1JqTkZFdWllZTZMQ2JFeXcwbzBlR1Njdw==")
-  );
-
-  const projectsBox = document.getElementById("projects");
-
-  fetch("https://api.github.com/graphql", {
-    body: JSON.stringify({ query }),
-    headers: {
-      Accept: "application/json",
-      Authorization: `Bearer ${token}`,
-      "Content-Type": "application/json",
-    },
-    method: "POST",
-  })
-    .then((r) => r.json())
-    .then((r) => {
-      const p = r.data.repositoryOwner.itemShowcase.items.edges.map((edge) => edge.node);
-
-      p.forEach((proj) => {
-        const info = document.createElement("div");
-        info.innerHTML = `
-        <h3><a href="${proj.url}">${proj.name}</a></h3>
-                <p>${proj.description}</p>
-            `;
-        projectsBox.appendChild(info);
-      });
-    });
-</script>
 
 <h2>Posts</h2>
 
