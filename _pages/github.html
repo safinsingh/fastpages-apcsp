@@ -51,7 +51,6 @@ search_exclude: true
 
       p.forEach((proj) => {
         const info = document.createElement("div");
-        info.onclick = () => window.open(proj.url, "_blank");
         info.innerHTML = `
         <h3><a href="${proj.url}">${proj.name}</a></h3>
                 <p>${proj.description}</p>

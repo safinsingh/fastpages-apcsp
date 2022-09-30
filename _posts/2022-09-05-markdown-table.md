@@ -183,7 +183,7 @@ layout: notebook
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Bonus:-current-time">Bonus: current time<a class="anchor-link" href="#Bonus:-current-time"> </a></h1><p>The current time is: {{ site.time | date_to_xmlschema }}, generated using:</p>
+<h1 id="Bonus:-current-time">Bonus: current time<a class="anchor-link" href="#Bonus:-current-time"> </a></h1><p>The current time (at the time this site was published) is: {{ site.time | date_to_xmlschema }}, generated using:</p>
 
 <pre><code>{% raw %}{{ site.time | date_to_xmlschema }}{% endraw %}</code></pre>
 <blockquote><p>This code block was rendered using the "raw" attribute, part of the Liquid syntax!</p>
