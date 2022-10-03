@@ -4,21 +4,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>APEL Notebook | Safin’s Fastpages Site</title>
+<title>GitHub | Safin’s Fastpages Site</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="APEL Notebook" />
+<meta property="og:title" content="GitHub" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Just finished working on my APEL notebook covers, here is what they look like:" />
-<meta property="og:description" content="Just finished working on my APEL notebook covers, here is what they look like:" />
-<link rel="canonical" href="https://safinsingh.github.io/fastpages-apcsp/apel/2022/08/28/apel-notebook.html" />
-<meta property="og:url" content="https://safinsingh.github.io/fastpages-apcsp/apel/2022/08/28/apel-notebook.html" />
+<meta name="description" content="Hi! This is my fastpages site built for APCSP." />
+<meta property="og:description" content="Hi! This is my fastpages site built for APCSP." />
+<link rel="canonical" href="https://safinsingh.github.io/fastpages-apcsp/github/" />
+<meta property="og:url" content="https://safinsingh.github.io/fastpages-apcsp/github/" />
 <meta property="og:site_name" content="Safin’s Fastpages Site" />
-<meta property="og:type" content="article" />
-<meta property="article:published_time" content="2022-08-28T00:00:00-05:00" />
+<meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="APEL Notebook" />
+<meta property="twitter:title" content="GitHub" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-08-28T00:00:00-05:00","datePublished":"2022-08-28T00:00:00-05:00","description":"Just finished working on my APEL notebook covers, here is what they look like:","headline":"APEL Notebook","mainEntityOfPage":{"@type":"WebPage","@id":"https://safinsingh.github.io/fastpages-apcsp/apel/2022/08/28/apel-notebook.html"},"url":"https://safinsingh.github.io/fastpages-apcsp/apel/2022/08/28/apel-notebook.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"Hi! This is my fastpages site built for APCSP.","headline":"GitHub","url":"https://safinsingh.github.io/fastpages-apcsp/github/"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/fastpages-apcsp/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://safinsingh.github.io/fastpages-apcsp/feed.xml" title="Safin's Fastpages Site" /><!-- the google_analytics_id gets auto inserted from the config file -->
 
@@ -101,38 +100,60 @@ window.onload = wrap_img;
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+        <h1>Top 4 GitHub Projects</h1>
+<div id="projects"></div>
+<a href="/fastpages-apcsp/js-explanation">Source code →</a>
 
-  <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">APEL Notebook</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-08-28T00:00:00-05:00" itemprop="datePublished">
-        Aug 28, 2022
-      </time>
-       • <span class="read-time" title="Estimated read time">
-    
-    
-      1 min read
-    
-</span></p>
+<script defer>
+  const query = `query {
+        repositoryOwner(login: "safinsingh") {
+            ... on ProfileOwner {
+                itemShowcase {
+                    items(first: 4) {
+                        edges {
+                            node {
+                                ... on Repository {
+                                    name
+                                    description
+                                    url
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }`;
+  // pls dont abuse this token it only has a public repo scope and it has a rate limit
+  const token = decodeURIComponent(
+    atob("Z2hwX3V1YmN4UzNJZ3kwc1JqTkZFdWllZTZMQ2JFeXcwbzBlR1Njdw==")
+  );
 
-    
-      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
-      
-        <a class="category-tags-link" href="/fastpages-apcsp/categories/#apel">apel</a>
-        
-      
-      </p>
-    
+  const projectsBox = document.getElementById("projects");
 
-    </header>
+  fetch("https://api.github.com/graphql", {
+    body: JSON.stringify({ query }),
+    headers: {
+      Accept: "application/json",
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    },
+    method: "POST",
+  })
+    .then((r) => r.json())
+    .then((r) => {
+      const p = r.data.repositoryOwner.itemShowcase.items.edges.map((edge) => edge.node);
 
-  <div class="post-content e-content" itemprop="articleBody">
-    <p>Just finished working on my APEL notebook covers, here is what they look like:</p>
-
-<p><img src="https://raw.githubusercontent.com/safinsingh/fastpages-apcsp/master/images/APEL/apelfront.png" alt="front" />
-<img src="https://raw.githubusercontent.com/safinsingh/fastpages-apcsp/master/images/APEL/apelback.png" alt="back" /></p>
-
-  </div><a class="u-url" href="/fastpages-apcsp/apel/2022/08/28/apel-notebook.html" hidden></a>
-</article>
+      p.forEach((proj) => {
+        const info = document.createElement("div");
+        info.innerHTML = `
+        <h3><a href="${proj.url}">${proj.name}</a></h3>
+                <p>${proj.description}</p>
+            `;
+        projectsBox.appendChild(info);
+      });
+    });
+</script>
 
       </div>
     </main><footer class="site-footer h-card">
