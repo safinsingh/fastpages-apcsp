@@ -27,3 +27,62 @@ We used NGINX to proxy requests to the AWS instance and serve the Flask site. We
 Here's proof that accessing the site works using its public IP:
 
 ![site]({{ site.baseurl }}/images/curl aws.png)
+
+# Configuration
+
+Here is my `docker-compose.yml`:
+
+```yaml
+version: "3"
+services:
+  web:
+    image: flask_safin_v1
+    build: .
+    ports:
+      - "8086:8080"
+    volumes:
+      - persistent_volume:/app/volumes
+volumes:
+  persistent_volume:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: /home/ubuntu/safin-flask/volumes
+```
+
+Here is my `Dockerfile`:
+
+```dockerfile
+FROM docker.io/python:3.9
+
+WORKDIR /app
+
+RUN apt-get update && apt-get upgrade -y && \
+    apt-get install -y python3 python3-pip git
+COPY . .
+
+RUN pip install --no-cache-dir -r requirements.txt
+RUN pip3 install gunicorn
+
+ENV GUNICORN_CMD_ARGS="--workers=1 --bind=0.0.0.0:8080"
+
+EXPOSE 8080
+
+CMD [ "gunicorn", "main:app" ]
+```
+
+Here is my NGINX configuration file:
+
+```nginx
+server {
+    listen 8080;
+    listen [::]:8080;
+    server_name 18.216.138.52;
+
+    location / {
+        proxy_pass http://localhost:8086;
+        add_header "Access-Control-Allow-Origin" *;
+    }
+}
+```
