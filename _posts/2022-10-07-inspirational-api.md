@@ -5,6 +5,7 @@ toc: true
 badges: true
 comments: true
 categories: [python, javascript]
+permalink: /inspirational-api
 nb_path: _notebooks/2022-10-07-inspirational-api.ipynb
 layout: notebook
 ---
