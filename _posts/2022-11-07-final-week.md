@@ -14,7 +14,7 @@ I got this question wrong:
 
 ![]({{ site.baseurl }}/images/finalwrong.png)
 
-In order to interchange the values at index `j` and `k` respectively, the procedure works as follows:
+In order to interchange the values at indexes `j` and `k` respectively, the procedure works as follows:
 
 1. Create a duplicate list of the list provided in the function parameters
 2. Set the element at index `i` of the new list to the element at index `j` in the old list and vice versa
