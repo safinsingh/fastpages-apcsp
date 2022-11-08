@@ -20,7 +20,7 @@ In order to interchange the values at index `j` and `k` respectively, the proced
 2. Set the element at index `i` of the new list to the element at index `j` in the old list and vice versa
 3. Return the new list
 
-Therefore, answers `C` and `D` are incorrect. We're left with deciding betweenrange(s) for `j` and `k` in answer choices `A` and `B`:
+Therefore, answers `C` and `D` are incorrect. We're left with deciding between range(s) for `j` and `k` in answer choices `A` and `B`:
 
 > The value of j must be between 0 and the value of k, inclusive _OR_ The values of j and k must both be between 1 and LENGTH(numList), inclusive.
 
