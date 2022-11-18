@@ -185,6 +185,8 @@ window.onload = wrap_img;
 			if (num > max) {
 				error.innerHTML = `error: invalid input: number ${num} is too large (max: ${max})`;
 				return;
+			} else {
+				isBaseError = false;
 			}
 
 			for (let b = 0; b < BITS; b++) {
