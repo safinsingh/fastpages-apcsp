@@ -14,10 +14,6 @@ github_repo: "fastpages-apcsp"
 url: "https://safinsingh.github.io" 
 baseurl: "/fastpages-apcsp"
 
-minima:
-  social_links:
-    github: safinsingh
-
 use_math: true
 show_description: true
 show_image: false
