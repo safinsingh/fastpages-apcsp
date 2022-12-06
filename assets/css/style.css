@@ -457,9 +457,11 @@ canvas { filter: invert(100%); }
 
 li .post-meta-description { color: #ededed !important; }
 
-.site-header { position: sticky; top: 0; background-color: #1616166e !important; backdrop-filter: blur(4px); border-top: 0px !important; border-bottom: 1px solid #191919 !important; -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+.site-header { position: sticky; top: 0; background-color: #1616166e !important; backdrop-filter: blur(4px); border-top: 0px !important; border-bottom: 2px solid #191919 !important; -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
 
 .site-footer { border-top: 1px solid #191919 !important; }
+
+@media (min-width: 992px) { .site-nav { background-color: transparent; } }
 
 a { color: #a0a0a0 !important; }
 
