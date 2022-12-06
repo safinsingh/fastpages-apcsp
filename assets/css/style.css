@@ -1,5 +1,3 @@
-@import url("https://rsms.me/inter/inter.css");
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap");
 .highlight .c { color: #998; font-style: italic; }
 
 .highlight .err { color: #a61717; background-color: #e3d2d2; }
@@ -427,8 +425,6 @@ pre code { font-size: 15px !important; }
 
 .youtube-iframe-wrapper iframe, .youtube-iframe-wrapper object, .youtube-iframe-wrapper embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
-* { transition: all 0.2s ease-in-out; }
-
 html, body, input, textarea, select, button { color: #000000 !important; background-color: #ffffff !important; }
 
 .site-title, .site-title:visited, .site-nav, .page-link { color: #000000 !important; }
@@ -463,20 +459,20 @@ li .post-meta-description { color: #000000 !important; }
 
 .site-header { position: sticky; top: 0; background-color: #ffffff !important; }
 
-a { color: #ff5e5e !important; }
+a { color: #ff5e86 !important; }
 
-a:hover { color: #ff5e5ed0 !important; text-decoration: none !important; font-weight: bold !important; }
+a:hover { text-decoration: none !important; color: #ff91ac !important; }
 
-* { font-family: "Inter", sans-serif !important; }
+* { font-family: "Inter", sans-serif; }
 
-@supports (font-variation-settings: normal) { * { font-family: "Inter var", sans-serif !important; } }
-
-code, pre * { font-family: "IBM Plex Mono", monospace !important; }
+code *, pre * { font-family: "IBM Plex Mono", monospace !important; }
 
 h1, h2 { font-weight: bold !important; }
 
 .highlight { background-color: #000000 !important; }
 
 html { scroll-behavior: smooth !important; }
+
+.site-title { font-weight: 300; }
 
 /*# sourceMappingURL=style.css.map */
