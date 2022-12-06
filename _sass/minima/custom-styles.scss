@@ -2,13 +2,6 @@
 /*--- IMPORT STYLES FOR FASTPAGES ---*/
 @import "minima/fastpages-styles";
 
-* {
-    transition: all 0.2s ease-in-out;
-}
-
-// If you want to turn off dark background for syntax highlighting, comment or delete the below line.
-// @import "minima/fastpages-dracula-highlight";
-
 $high-emph: #000000;
 $med-emph: #000000;
 $low-emph: #000000;
@@ -16,6 +9,7 @@ $dark-grey: #ffffff;
 // $dark-grey : #1F1B24;
 $overlay: #000000;
 $overlay-light: #424242;
+$accent: #ff5e86;
 
 html,
 body,
@@ -23,126 +17,122 @@ input,
 textarea,
 select,
 button {
-    color: $high-emph !important;
-    background-color: $dark-grey !important;
+	color: $high-emph !important;
+	background-color: $dark-grey !important;
 }
 .site-title,
 .site-title:visited,
 .site-nav,
 .page-link {
-    color: $high-emph !important;
+	color: $high-emph !important;
 }
 
 .site-nav {
-    background-color: $dark-grey;
-    border-color: $overlay-light;
+	background-color: $dark-grey;
+	border-color: $overlay-light;
 }
 
 * {
-    scrollbar-color: $dark-grey $overlay-light;
+	scrollbar-color: $dark-grey $overlay-light;
 }
 
 pre,
 code {
-    // BVas a lighter colour to better highlight short code words
-    border-color: $overlay-light;
-    background-color: $overlay;
-    color: #fff;
+	// BVas a lighter colour to better highlight short code words
+	border-color: $overlay-light;
+	background-color: $overlay;
+	color: #fff;
 }
 
 .page-description {
-    color: $med-emph;
+	color: $med-emph;
 }
 
 .post-meta {
-    color: $low-emph;
+	color: $low-emph;
 }
 
 .post-content p,
 .post-content li {
-    color: $med-emph;
+	color: $med-emph;
 }
 
 .btn {
-    background-color: $overlay !important;
-    color: $high-emph !important;
-    border-color: $overlay-light !important;
+	background-color: $overlay !important;
+	color: $high-emph !important;
+	border-color: $overlay-light !important;
 }
 
 .btn:hover {
-    background-color: $dark-grey !important;
+	background-color: $dark-grey !important;
 }
 
 table th {
-    border-color: $overlay-light;
-    color: $high-emph;
+	border-color: $overlay-light;
+	color: $high-emph;
 }
 
 table td {
-    background-color: $dark-grey;
-    border-color: $overlay-light;
-    color: $med-emph;
+	background-color: $dark-grey;
+	border-color: $overlay-light;
+	color: $med-emph;
 }
 
 .flash {
-    color: $dark-grey !important;
-    filter: brightness(80%);
+	color: $dark-grey !important;
+	filter: brightness(80%);
 }
 
 canvas {
-    filter: invert(100%);
+	filter: invert(100%);
 }
 
 .post-list > li > div {
-    box-shadow: none !important;
-    background-color: $overlay;
-    border: none !important;
+	box-shadow: none !important;
+	background-color: $overlay;
+	border: none !important;
 }
 
 li .post-meta-description {
-    color: $med-emph !important;
+	color: $med-emph !important;
 }
 
 .site-header {
-    position: sticky;
-    top: 0;
-    background-color: $dark-grey !important;
+	position: sticky;
+	top: 0;
+	background-color: $dark-grey !important;
 }
 
 a {
-    color: #ff5e5e !important;
+	color: $accent !important;
 }
 
 a:hover {
-    color: #ff5e5ed0 !important;
-    text-decoration: none !important;
-    font-weight: bold !important;
+	text-decoration: none !important;
+	color: lighten($accent, 10%) !important;
 }
 
-@import url("https://rsms.me/inter/inter.css");
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap");
 * {
-    font-family: "Inter", sans-serif !important;
-}
-@supports (font-variation-settings: normal) {
-    * {
-        font-family: "Inter var", sans-serif !important;
-    }
+	font-family: "Inter", sans-serif;
 }
 
-code,
+code *,
 pre * {
-    font-family: "IBM Plex Mono", monospace !important;
+	font-family: "IBM Plex Mono", monospace !important;
 }
 h1,
 h2 {
-    font-weight: bold !important;
+	font-weight: bold !important;
 }
 
 .highlight {
-    background-color: #000000 !important;
+	background-color: #000000 !important;
 }
 
 html {
-  scroll-behavior: smooth !important;
+	scroll-behavior: smooth !important;
+}
+
+.site-title {
+	font-weight: 300;
 }
