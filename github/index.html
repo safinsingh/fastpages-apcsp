@@ -143,7 +143,7 @@
 <a href="/fastpages-apcsp/js-explanation">Source code →</a>
 
 <script defer>
-  const query = `query {
+	const query = `query {
         repositoryOwner(login: "safinsingh") {
             ... on ProfileOwner {
                 itemShowcase {
@@ -162,35 +162,35 @@
             }
         }
     }`;
-  // pls dont abuse this token it only has a public repo scope and it has a rate limit
-  const token = decodeURIComponent(
-    atob("Z2hwX3V1YmN4UzNJZ3kwc1JqTkZFdWllZTZMQ2JFeXcwbzBlR1Njdw==")
-  );
+	// pls dont abuse this token it only has a public repo scope and it has a rate limit
+	const token = decodeURIComponent(
+		atob("Z2hwX3V1YmN4UzNJZ3kwc1JqTkZFdWllZTZMQ2JFeXcwbzBlR1Njdw==")
+	);
 
-  const projectsBox = document.getElementById("projects");
+	const projectsBox = document.getElementById("projects");
 
-  fetch("https://api.github.com/graphql", {
-    body: JSON.stringify({ query }),
-    headers: {
-      Accept: "application/json",
-      Authorization: `Bearer ${token}`,
-      "Content-Type": "application/json",
-    },
-    method: "POST",
-  })
-    .then((r) => r.json())
-    .then((r) => {
-      const p = r.data.repositoryOwner.itemShowcase.items.edges.map((edge) => edge.node);
+	fetch("https://api.github.com/graphql", {
+		body: JSON.stringify({ query }),
+		headers: {
+			Accept: "application/json",
+			Authorization: `Bearer ${token}`,
+			"Content-Type": "application/json",
+		},
+		method: "POST",
+	})
+		.then((r) => r.json())
+		.then((r) => {
+			const p = r.data.repositoryOwner.itemShowcase.items.edges.map((edge) => edge.node);
 
-      p.forEach((proj) => {
-        const info = document.createElement("div");
-        info.innerHTML = `
+			p.forEach((proj) => {
+				const info = document.createElement("div");
+				info.innerHTML = `
         <h3><a href="${proj.url}">${proj.name}</a></h3>
                 <p>${proj.description}</p>
             `;
-        projectsBox.appendChild(info);
-      });
-    });
+				projectsBox.appendChild(info);
+			});
+		});
 </script>
 
       </div>
