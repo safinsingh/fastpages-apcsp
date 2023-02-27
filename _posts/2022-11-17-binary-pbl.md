@@ -1,6 +1,6 @@
 ---
 title: Binary Math
-layout: default
+layout: base
 permalink: /frontend/binary
 image: /images/binary.png
 categories: [3.B, 3.C, C4.4]
