@@ -50,3 +50,5 @@ ipython_config.py
 *.code-workspace
 
 # End of https://www.toptal.com/developers/gitignore/api/jekyll,jupyternotebooks,visualstudiocode
+
+.DS_*
