@@ -1,0 +1,64 @@
+f(x,y) = xe^xy = x * e^xy 
+in v=<2, 3> at (-3, 0)
+|v| = sqrt(4+9) = sqrt(13)
+u=<2/sqrt(13), 3/sqrt(13)>
+
+Grad(f) = <e^xy + xye^xy, x^2e^xy>
+Grad((-3, 0)) = <1 + 0, 9> = <1, 9>
+
+Duf = Grad(f) . u = <1, 9> . <2/sqrt(13), 3/sqrt(13)>
+
+
+
+
+
+
+f(x, y) = x^2 sec(3x) - x^2/y^3
+Grad(f) = <x^2 * sec(3x)tan(3x) * 3 + 2x * sec(3x) - 2x/y^3,
+           3x^2/y^4>
+
+
+
+DuF practice
+
+f(x, y) = cos(x/y) in v=<3, -4>
+
+Grad(f) = <1/y * -sin(x/y), x/y^2 * sin(x/y)>
+
+|v| = sqrt(9 + 16) = 5
+u = <3/5, -4/5>
+
+DuF = Grad(f) . u = -3/5y sin(x/y) -4x/5y^2 sin(x/y_
+    = -1/5 (3/y + 4x/y^2) * sin(x/y)
+
+
+DuF at a point
+
+DuF(3, -1, 0) for f(x, y, z) = 4x - y^2 * e^3xz in <-1, 4, 2>
+Grad(f) = <4 - 3xzy^2 * e^3xz * 3z, -2y * e^3xz, -3xy^2 * e^3xz * 3x>
+Grad(3, -1, 0) = <4, 2, -9>
+
+|v| = sqrt(1 + 16 + 4) = sqrt(21)
+u = <-1/sqrt(21), 4/sqrt(21), 2/sqrt(21)>
+
+DuF = Grad(f) dot u
+    = <4, 2, -9> dot <-1/sqrt(21), 4/sqrt(21), 2/sqrt(21)>
+    = -4/sqrt(21) + 8/sqrt(21) - 18/sqrt(21)
+    = -14/sqrt(21)
+
+Max ROC
+
+f(x, y) = sqrt(x^2 + y^4) at (-2, 3)
+Grad(f) = <2x * 1/(2 * sqrt(x^2 + y^4)), 4y^3 * 1/(2 * sqrt(x^2 + y^4))>
+Grad((-2, 3)) = < -4 / (2*sqrt(85)), 4*27 / (2*sqrt(85))>
+              = < -2/sqrt(85), 54/sqrt(85)>
+|Grad((-2, 3))| = sqrt(4/85 + 54^2/85) = sqrt(584/17) = 5.861
+# unit vector not needed
+# U = < -2/sqrt(40), -6/sqrt(40)>
+
+Max ROC 2
+
+f(x, y, z) = e^2x * cos(y-2z) at (4, -2, 0)
+Grad(f) = <2e^2x * cos(y-2z) + e^2x, e^2x * -sin(y-2z),
+           e^2x * 2sin(y-2z)>
+Grad((4, -2, 0)) = <
