@@ -8,8 +8,8 @@
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Hashmaps &amp; Sets" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Observing hashmaps with python dictionaries" />
-<meta property="og:description" content="Observing hashmaps with python dictionaries" />
+<meta name="description" content="Hi! This is my fastpages site built for APCSP." />
+<meta property="og:description" content="Hi! This is my fastpages site built for APCSP." />
 <link rel="canonical" href="https://safinsingh.github.io/fastpages-apcsp/2023/03/29/DS-hashmaps.html" />
 <meta property="og:url" content="https://safinsingh.github.io/fastpages-apcsp/2023/03/29/DS-hashmaps.html" />
 <meta property="og:site_name" content="Safin’s Fastpages Site" />
@@ -18,7 +18,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Hashmaps &amp; Sets" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-03-29T00:00:00-05:00","datePublished":"2023-03-29T00:00:00-05:00","description":"Observing hashmaps with python dictionaries","headline":"Hashmaps &amp; Sets","mainEntityOfPage":{"@type":"WebPage","@id":"https://safinsingh.github.io/fastpages-apcsp/2023/03/29/DS-hashmaps.html"},"url":"https://safinsingh.github.io/fastpages-apcsp/2023/03/29/DS-hashmaps.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-03-29T00:00:00-05:00","datePublished":"2023-03-29T00:00:00-05:00","description":"Hi! This is my fastpages site built for APCSP.","headline":"Hashmaps &amp; Sets","mainEntityOfPage":{"@type":"WebPage","@id":"https://safinsingh.github.io/fastpages-apcsp/2023/03/29/DS-hashmaps.html"},"url":"https://safinsingh.github.io/fastpages-apcsp/2023/03/29/DS-hashmaps.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/fastpages-apcsp/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://safinsingh.github.io/fastpages-apcsp/feed.xml" title="Safin's Fastpages Site" /><!-- the google_analytics_id gets auto inserted from the config file -->
 
@@ -142,13 +142,13 @@
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Hashmaps &amp; Sets</h1><p class="page-description">Observing hashmaps with python dictionaries</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-03-29T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Hashmaps &amp; Sets</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-03-29T00:00:00-05:00" itemprop="datePublished">
         Mar 29, 2023
       </time>
        • <span class="read-time" title="Estimated read time">
     
     
-      6 min read
+      7 min read
     
 </span></p>
 
@@ -482,16 +482,55 @@
 <li>Answer <em>ALL</em> questions in the code segments</li>
 <li>Create a diagram or comparison illustration (Canva).<ul>
 <li>What are the pro and cons of using this data structure? </li>
-<li>Dictionary vs List    </li>
+<li>Dictionary vs List</li>
 </ul>
 </li>
+</ul>
+
+<pre><code>+----------------------+---------------------------+
+|      Dictionaries    |          Lists            |
++----------------------+---------------------------+
+|  Unordered           |  Ordered                  |
+|  Accessed by key     |  Accessed by index        |
+|  Keys must be unique |  Can have duplicates      |
+|  Value can be any    |  Value can be any         |
+|  object type         |  object type              |
+|  Can't be sliced     |  Can be sliced            |
+|  Can't be sorted     |  Can be sorted            |
+|  Use curly braces {} |  Use square brackets []   |
++---------------------+----------------------------+</code></pre>
+<ul>
 <li>Expand upon the code given to you, possible improvements in comments</li>
-<li>
-<p>Build your own album showing features of a python dictionary</p>
-</li>
-<li>
-<p>For Mr. Yeung's class: Justify your favorite Taylor Swift song, answer may effect seed</p>
-</li>
+<li>Build your own album showing features of a python dictionary</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="n">channel_orange_album</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"title"</span><span class="p">:</span> <span class="s2">"channel ORANGE"</span><span class="p">,</span>
+    <span class="s2">"artist"</span><span class="p">:</span> <span class="s2">"Frank Ocean"</span><span class="p">,</span>
+    <span class="s2">"year"</span><span class="p">:</span> <span class="mi">2012</span><span class="p">,</span>
+    <span class="s2">"genre"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"Alternative R&amp;B"</span><span class="p">,</span> <span class="s2">"Neo-Soul"</span><span class="p">],</span>
+    <span class="s2">"tracks"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="mi">1</span><span class="p">:</span> <span class="s2">"Start"</span><span class="p">,</span>
+        <span class="mi">2</span><span class="p">:</span> <span class="s2">"Thinkin Bout You"</span><span class="p">,</span>
+        <span class="mi">3</span><span class="p">:</span> <span class="s2">"Fertilizer"</span><span class="p">,</span>
+        <span class="mi">4</span><span class="p">:</span> <span class="s2">"Sierra Leone"</span><span class="p">,</span>
+        <span class="mi">5</span><span class="p">:</span> <span class="s2">"Sweet Life"</span><span class="p">,</span>
+        <span class="mi">6</span><span class="p">:</span> <span class="s2">"Not Just Money"</span><span class="p">,</span>
+        <span class="mi">7</span><span class="p">:</span> <span class="s2">"Super Rich Kids (feat. Earl Sweatshirt)"</span><span class="p">,</span>
+        <span class="mi">8</span><span class="p">:</span> <span class="s2">"Pilot Jones"</span><span class="p">,</span>
+        <span class="mi">9</span><span class="p">:</span> <span class="s2">"Crack Rock"</span><span class="p">,</span>
+        <span class="mi">10</span><span class="p">:</span> <span class="s2">"Pyramids"</span><span class="p">,</span>
+        <span class="mi">11</span><span class="p">:</span> <span class="s2">"Lost"</span><span class="p">,</span>
+        <span class="mi">12</span><span class="p">:</span> <span class="s2">"White (feat. John Mayer)"</span><span class="p">,</span>
+        <span class="mi">13</span><span class="p">:</span> <span class="s2">"Monks"</span><span class="p">,</span>
+        <span class="mi">14</span><span class="p">:</span> <span class="s2">"Bad Religion"</span><span class="p">,</span>
+        <span class="mi">15</span><span class="p">:</span> <span class="s2">"Pink Matter (feat. André 3000)"</span><span class="p">,</span>
+        <span class="mi">16</span><span class="p">:</span> <span class="s2">"Forrest Gump"</span><span class="p">,</span>
+        <span class="mi">17</span><span class="p">:</span> <span class="s2">"End"</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<ul>
+<li>For Mr. Yeung's class: Justify your favorite Taylor Swift song, answer may effect seed</li>
 </ul>
 <p>It is my pleasure to delve into the musical masterpiece that is "Shake It Off" by Taylor Swift. This song stands out among her many hits as a true representation of her unparalleled songwriting abilities and artistic vision.</p>
 <p>Firstly, the infectious melody of "Shake It Off" is one that simply cannot be ignored. From the opening notes, listeners are drawn into the upbeat rhythm that sets the tone for the entire song. Swift's use of repetition throughout the chorus creates a singalong-worthy hook that is both memorable and catchy. Furthermore, the instrumental arrangement is perfectly balanced, blending horns, drums, and guitar to create a dynamic sound that complements Swift's vocals beautifully.</p>
