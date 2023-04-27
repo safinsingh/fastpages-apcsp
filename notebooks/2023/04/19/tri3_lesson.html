@@ -148,7 +148,7 @@
        • <span class="read-time" title="Estimated read time">
     
     
-      13 min read
+      16 min read
     
 </span></p>
 
@@ -942,12 +942,77 @@ P+R+A: 37.00
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="c1"># read the CSV file</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"blank.csv"</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"insurance.csv"</span><span class="p">)</span>
+
+<span class="c1"># select and parse a few columns</span>
+<span class="n">domains</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"Domain"</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">prices</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"Price"</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">','</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'$'</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'£'</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">years</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"Year of sale"</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+<span class="c1"># print the parsed columns</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Domains:"</span><span class="p">,</span> <span class="n">domains</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Prices:"</span><span class="p">,</span> <span class="n">prices</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Years:"</span><span class="p">,</span> <span class="n">years</span><span class="p">)</span>
+
 <span class="c1"># display the data in a table</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Domains: ['AltaVista.com', 'Asseenontv.com', 'Beer.com', 'Business.com', 'Candy.com', 'Casino.com', 'Clothes.com', 'Diamond.com', 'Fb.com', 'Fund.com', 'GiftCard.com', 'Hotels.com ', 'iCloud.com', 'IG.com', 'Insurance.com ', 'Insure.com ', 'Internet.com ', 'Loans.com', 'Medicare.com', 'Mi.com', 'Porn.com', 'PrivateJet.com ', 'Sex.com', 'Slots.com ', 'Toys.com', 'VacationRentals.com ', 'Whisky.com', 'Yp.com']
+Prices: [3300000.0, 5100000.0, 7000000.0, 7500000.0, 3000000.0, 5500000.0, 4900000.0, 7500000.0, 8500000.0, 9990000.0, 4000000.0, 11000000.0, 6000000.0, 4600000.0, 35600000.0, 16000000.0, 18000000.0, 3000000.0, 4800000.0, 3600000.0, 9500000.0, 30100000.0, 14000000.0, 5500000.0, 5100000.0, 35000000.0, 3100000.0, 3800000.0]
+Years: [1998, 2000, 2004, 1999, 1009, 2003, 2008, 2006, 2010, 2008, 2012, 2001, 2011, 2013, 2010, 2009, 2009, 2000, 2014, 2014, 2007, 2012, 2010, 2010, 2009, 2007, 2013, 2008]
+                  Domain        Price  Year of sale
+0          AltaVista.com   $3,300,000          1998
+1         Asseenontv.com   $5,100,000          2000
+2               Beer.com   $7,000,000          2004
+3           Business.com   $7,500,000          1999
+4              Candy.com   $3,000,000          1009
+5             Casino.com   $5,500,000          2003
+6            Clothes.com   $4,900,000          2008
+7            Diamond.com   $7,500,000          2006
+8                 Fb.com   $8,500,000          2010
+9               Fund.com   £9,990,000          2008
+10          GiftCard.com   $4,000,000          2012
+11           Hotels.com   $11,000,000          2001
+12            iCloud.com   $6,000,000          2011
+13                IG.com   $4,600,000          2013
+14        Insurance.com   $35,600,000          2010
+15           Insure.com   $16,000,000          2009
+16         Internet.com   $18,000,000          2009
+17             Loans.com   $3,000,000          2000
+18          Medicare.com   $4,800,000          2014
+19                Mi.com   $3,600,000          2014
+20              Porn.com   $9,500,000          2007
+21       PrivateJet.com   $30,100,000          2012
+22               Sex.com  $14,000,000          2010
+23            Slots.com    $5,500,000          2010
+24              Toys.com   $5,100,000          2009
+25  VacationRentals.com   $35,000,000          2007
+26            Whisky.com   $3,100,000          2013
+27                Yp.com   $3,800,000          2008
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/tmp/ipykernel_1341/2301951595.py:7: FutureWarning: The default value of regex will change from True to False in a future version. In addition, single character regular expressions will *not* be treated as literal strings when regex=True.
+  prices = df["Price"].str.replace(',', '').str.replace('$', '').str.replace('£', '').astype(float).tolist()
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -961,11 +1026,17 @@ P+R+A: 37.00
 <a class="anchor" href="#Question-Hacks;" aria-hidden="true"><span class="octicon octicon-link"></span></a>Question Hacks;<a class="anchor-link" href="#Question-Hacks;"> </a>
 </h2>
 <p>What is NumPy and how is it used in data analysis?</p>
+<p>NumPy, short for Numerical Python, is a popular library in Python that offers powerful tools for numerical computing. It's particularly useful in data analysis for its ability to handle large, multi-dimensional arrays and perform efficient mathematical operations. With NumPy, analysts can quickly manipulate and process data, making it an essential tool for tasks like statistical analysis, linear algebra, and more.</p>
 <p>What is Pandas and how is it used in data analysis?</p>
+<p>Pandas is another powerful Python library designed for data manipulation and analysis. It introduces two key data structures: Series and DataFrame, which simplify handling and processing large datasets. Pandas enables easy data cleaning, filtering, aggregation, and visualization, making it an indispensable tool for data analysts working with structured data.</p>
 <p>How is numpy different than Pandas for data analysis?</p>
+<p>While both NumPy and Pandas are essential for data analysis, their primary difference lies in the data structures they handle. NumPy is more focused on numerical arrays and mathematical operations, whereas Pandas excels at handling structured data through Series and DataFrames. Though Pandas is built on top of NumPy, it offers additional functionalities like data alignment, handling missing data, and advanced indexing, making it more suitable for complex data analysis tasks.</p>
 <p>What is a DataFrame?</p>
+<p>A DataFrame is a two-dimensional, size-mutable, and heterogeneous data structure provided by the Pandas library. It resembles a table with rows and columns, where each column can have a different data type. DataFrames allow for efficient data manipulation, indexing, and slicing, making them an ideal tool for handling structured data in data analysis.</p>
 <p>What are some common operations you can perform with numpy?</p>
+<p>With NumPy, you can perform a wide range of operations, including array creation, reshaping, slicing, and indexing. Additionally, NumPy offers mathematical functions like addition, subtraction, multiplication, and division, along with more advanced operations such as linear algebra, statistics, and element-wise functions.</p>
 <p>How Can You Incorporate Either of these Data Analysis Tools (numpy, Pandas) into your project?</p>
+<p>Incorporating NumPy or Pandas into your project is straightforward. First, you'll need to install the libraries using pip or another package manager. Once installed, you can import them into your Python script with <code>import numpy as np</code> or <code>import pandas as pd</code>. Then, you can leverage their powerful functionalities to analyze, manipulate, and process your data more efficiently, allowing you to focus on generating valuable insights for your project.</p>
 
 </div>
 </div>
