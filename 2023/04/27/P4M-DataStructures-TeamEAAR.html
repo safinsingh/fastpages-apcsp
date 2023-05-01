@@ -151,7 +151,7 @@
        • <span class="read-time" title="Estimated read time">
     
     
-      11 min read
+      13 min read
     
 </span></p>
 
@@ -1122,6 +1122,139 @@ Final grocery list:
 Total cost: $10.0
 </pre>
 </div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">display_ascii_table</span><span class="p">(</span><span class="n">dictionary</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;╔═════════════╦═════════════╗&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;║ Key         ║ Value       ║&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;╠═════════════╬═════════════╣&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">dictionary</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;║ </span><span class="si">{</span><span class="n">key</span><span class="si">:</span><span class="s2">&lt;12</span><span class="si">}</span><span class="s2">║ </span><span class="si">{</span><span class="n">value</span><span class="si">:</span><span class="s2">&lt;12</span><span class="si">}</span><span class="s2">║&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;╚═════════════╩═════════════╝&quot;</span><span class="p">)</span>
+
+<span class="n">my_dictionary</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Enter a key and value (both strings) to add to the dictionary. Type &#39;quit&#39; to exit.&quot;</span><span class="p">)</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Key: &quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">key</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;quit&#39;</span><span class="p">:</span>
+        <span class="k">break</span>
+
+    <span class="n">value</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Value: &quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">value</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;quit&#39;</span><span class="p">:</span>
+        <span class="k">break</span>
+
+    <span class="n">my_dictionary</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+    <span class="n">display_ascii_table</span><span class="p">(</span><span class="n">my_dictionary</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Enter a key and value (both strings) to add to the dictionary. Type &#39;quit&#39; to exit.
+╔═════════════╦═════════════╗
+║ Key         ║ Value       ║
+╠═════════════╬═════════════╣
+║ abc         ║ lol         ║
+╚═════════════╩═════════════╝
+Enter a key and value (both strings) to add to the dictionary. Type &#39;quit&#39; to exit.
+╔═════════════╦═════════════╗
+║ Key         ║ Value       ║
+╠═════════════╬═════════════╣
+║ abc         ║ lol         ║
+║ amay        ║ monkey      ║
+╚═════════════╩═════════════╝
+Enter a key and value (both strings) to add to the dictionary. Type &#39;quit&#39; to exit.
+╔═════════════╦═════════════╗
+║ Key         ║ Value       ║
+╠═════════════╬═════════════╣
+║ abc         ║ lol         ║
+║ amay        ║ monkey      ║
+║ good        ║ boy         ║
+╚═════════════╩═════════════╝
+Enter a key and value (both strings) to add to the dictionary. Type &#39;quit&#39; to exit.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">ImageDraw</span><span class="p">,</span> <span class="n">ImageFont</span>
+
+<span class="k">def</span> <span class="nf">nd_array</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="p">[[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+    <span class="k">return</span> <span class="n">array</span>
+
+<span class="k">def</span> <span class="nf">nd_array_draw</span><span class="p">(</span><span class="n">array</span><span class="p">):</span>
+    <span class="n">cell_size</span> <span class="o">=</span> <span class="mi">50</span>
+    <span class="n">width</span> <span class="o">=</span> <span class="n">height</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">array</span><span class="p">)</span> <span class="o">*</span> <span class="n">cell_size</span>
+
+    <span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;RGB&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">),</span> <span class="s2">&quot;white&quot;</span><span class="p">)</span>
+    <span class="n">draw</span> <span class="o">=</span> <span class="n">ImageDraw</span><span class="o">.</span><span class="n">Draw</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">array</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
+            <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">j</span> <span class="o">*</span> <span class="n">cell_size</span><span class="p">,</span> <span class="n">i</span> <span class="o">*</span> <span class="n">cell_size</span>
+            <span class="n">draw</span><span class="o">.</span><span class="n">rectangle</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">cell_size</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">cell_size</span><span class="p">],</span> <span class="n">fill</span><span class="o">=</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
+            <span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">((</span><span class="n">x</span> <span class="o">+</span> <span class="n">cell_size</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">8</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">cell_size</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">8</span><span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">value</span><span class="si">:</span><span class="s2">0&gt;3</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">image</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter the size of the 2D array: &quot;</span><span class="p">))</span>
+<span class="n">array</span> <span class="o">=</span> <span class="n">nd_array</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">nd_array_draw</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
+
+<span class="c1"># Display the image</span>
+<span class="n">display</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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" />
+</div>
+
 </div>
 
 </div>
