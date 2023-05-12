@@ -17,3 +17,10 @@ Students will be able to save valuable time spent debugging deployment errors an
 ## Sorting & Filtering
 
 All students' deployed websites will be listed on a page that includes container statistics (CPU%, MEM, etc). The AWS instance could include a program to monitor running containers and send updated information to backend. Temporary storage of these statistics using Redis; frontend refreshes at ~5s intervals with WebSocket. Users can sort by any of these statistics on the frontend interface. Sorting algorithm will be implemented in JavaScript on frontend.
+
+## Tools
+
+Backend: Python web server (Flask)
+Frontend: Svelte + Tailwind
+Provisioning: Terraform
+Database: GitHub
